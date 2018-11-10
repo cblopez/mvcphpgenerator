@@ -88,7 +88,8 @@ The resulting directory should look something like this (entities taken from the
   - Models
     - Post_Model.php
     - User_Model.php
-  - Views
+  - Views  
+
 **Important!** As it is said at the end of the script, you'll have to manually go to the Functions/gatherData.php and add manually all the includes from the Models.
 
 ## Controller Example: User_Controller.php   
