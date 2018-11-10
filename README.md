@@ -24,9 +24,9 @@ You'll be asked to type on terminal all the info required to create de PHP scrip
 - Models are classes
 - Views are not created (obviously)
 - The script for gathering data is situated under MVCPHPGenerator/Functions  
-- the index.php is used as a common entry point  
+- the index.php is used as a common entry point(not implemented yet)  
 
-With that being set, you'll need to fill the information asked. It looks something like this:
+With that being said, you'll need to fill the information asked. It looks something like this:
 ```
 Christians-MacBook-Pro:MVCPHPGenerator christianbarrallopez$ python mvcPHPGenerator.py 
 
