@@ -1,6 +1,9 @@
-# mvcphpgenerator 1.0  
+# mvcphpgenerator 1.1  
 Python script for PHP file generator using MVC Paradign for Python 2.7.  
 Created by Christian Barral
+
+## NEW!  
+index.php generator!
 
 ## Instructions
 Download the script and execute it via terminal  
@@ -24,7 +27,7 @@ You'll be asked to type on terminal all the info required to create de PHP scrip
 - Models are classes
 - Views are not created (obviously)
 - The script for gathering data is situated under MVCPHPGenerator/Functions  
-- the index.php is used as a common entry point(not implemented yet)  
+- the index.php is used as a common entry point (new)  
 
 With that being said, you'll need to fill the information asked. It looks something like this:
 ```
@@ -89,6 +92,8 @@ The resulting directory should look something like this (entities taken from the
     - Post_Model.php
     - User_Model.php
   - Views  
+  - index.php  
+
 
 **Important!** As it is said at the end of the script, you'll have to manually go to the Functions/gatherData.php and add manually all the includes from the Models.
 
@@ -235,4 +240,41 @@ function gatherDataPost(){
 	}
 
 }
+```
+## index.php
+```
+<?php
+
+define("DEFAULT_CONTROLLER", "Index");
+define("DEFAULT_ACTION", "index");
+
+
+
+function run() {
+	try {
+
+		if (!isset($_GET["controller"])) {
+			$_GET["controller"] = DEFAULT_CONTROLLER;
+		}
+		if (!isset($_GET["action"])) {
+			$_GET["action"] = DEFAULT_ACTION;
+		}
+
+		$controller = loadController($_GET["controller"]);
+
+
+		include (string)$controller;
+
+	} catch(Exception $ex) {
+		die("Ha habiedo una Exception: ".$ex->getMessage());
+	}
+} //Final run()
+
+function loadController($controllerName) {
+	$controllerClassName = __DIR__."/Controllers/".$controllerName."_Controller.php";
+	return $controllerClassName;
+}
+
+run();
+?>
 ```
