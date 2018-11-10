@@ -30,9 +30,7 @@ You'll be asked to type on terminal all the info required to create de PHP scrip
 - the index.php is used as a common entry point (new)  
 
 With that being said, you'll need to fill the information asked. It looks something like this:
-```
-Christians-MacBook-Pro:MVCPHPGenerator christianbarrallopez$ python mvcPHPGenerator.py 
-
+``` 
 *_*_*_*_*_*_*_*_*_*
 MVC PHP Generator
 by Christian Barral
@@ -240,6 +238,7 @@ function gatherDataPost(){
 	}
 
 }
+?>  
 ```
 ## index.php
 ```
