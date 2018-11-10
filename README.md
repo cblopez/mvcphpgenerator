@@ -1,5 +1,5 @@
 # mvcphpgenerator 1.1  
-Python script for PHP file generator using MVC Paradign for Python 2.7.  
+Python script for PHP file generator using MVC Paradigm for Python 2.7.  
 Created by Christian Barral
 
 ## NEW!  
