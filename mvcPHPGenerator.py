@@ -12,7 +12,7 @@ def generateController(entityName,actionList):
 
     controller.write('<?php\r\n')
     controller.write('\r\n')
-    controller.write('include __DIR__.\'../Functions/gatherData.php\';\r\n')
+    controller.write('include __DIR__.\'/../Functions/gatherData.php\';\r\n')
     controller.write('\r\n')
     controller.write('\r\n')
     controller.write('if(!$_GET){\r\n')
@@ -66,7 +66,7 @@ def generateModel(entityName, attributesList):
     for attribute in attributesList:
         model.write('\t\t$this->' + attribute + ' = $' + attribute + ';\r\n')
     model.write('\t\tinclude_once __DIR__.\'/../Functions/FillWithDBConnectioin.php\';\r\n')
-    model.write('\t\t$this->db = //Fill with connection method\r\n')
+    model.write('\t\t$this->db = 0;//Fill with connection method\r\n')
     model.write('\t}\r\n')
     model.write('\r\n')
     model.write('}\r\n')
