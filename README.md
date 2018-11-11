@@ -80,7 +80,10 @@ Insert action (none to stop): none
 [+] Appending to gatherData.php for POST
 Would you like to add more entities? (yes/no): no
 [+] Finished successfully.
+IMPORTANT: Go to the Functions folder and fill the models includes from gatherData.php manually.
 ```
+
+##### Please notice the last line: IMPORTANT: Go to the Functions folder and fill the models includes from gatherData.php manually.
 
 Note that the resulting directory is created on the path you executed the script. I'll add the functionality of changing that path on following versions.  
 The resulting directory should look something like this (entities taken from the above example):  
