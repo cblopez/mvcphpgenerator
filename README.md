@@ -1,10 +1,11 @@
-# mvcphpgenerator 1.1  
+# mvcphpgenerator 1.1.1  
 Python script for PHP file generator using MVC Paradigm for Python 2.7.  
 Created by Christian Barral
 
 ## Fixed
 Fixed a syntax error on includes of every Controllers  
 Fixed a missing value for $this->db in every Model constructor.
+include_once of DB authentication function example is now commented at first.
 
 ## NEW!  
 index.php generator!  
@@ -169,7 +170,7 @@ class User_Model{
 		$this->surname = $surname;
 		$this->email = $email;
 		$this->password = $password;
-		include_once __DIR__.'/../Functions/FillWithDBConnectioin.php';
+		//include_once __DIR__.'/../Functions/FillWithDBConnectioin.php';
 		$this->db = 0;//Fill with connection method
 	}
 
