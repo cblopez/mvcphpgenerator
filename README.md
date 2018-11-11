@@ -7,7 +7,8 @@ Fixed a syntax error on includes of every Controllers
 Fixed a missing value for $this->db in every Model constructor.
 
 ## NEW!  
-index.php generator!
+index.php generator!  
+gatherData.php now includes all Models files. (experimental)
 
 ## Instructions
 Download the script and execute it via terminal  
@@ -79,7 +80,6 @@ Insert action (none to stop): none
 [+] Appending to gatherData.php for POST
 Would you like to add more entities? (yes/no): no
 [+] Finished successfully.
-IMPORTANT: Before using the project, please head to MVCPHPGenerator/Functions/gatherData.php and set the models includes at the beginning of the script, where it says '//Fill with includes'
 ```
 
 Note that the resulting directory is created on the path you executed the script. I'll add the functionality of changing that path on following versions.  
@@ -97,13 +97,11 @@ The resulting directory should look something like this (entities taken from the
   - index.php  
 
 
-**Important!** As it is said at the end of the script, you'll have to manually go to the Functions/gatherData.php and add manually all the includes from the Models.
-
 ## Controller Example: User_Controller.php   
 ```
 <?php
 
-include __DIR__.'../Functions/gatherData.php
+include __DIR__.'/../Functions/gatherData.php
 
 
 if(!$_GET){
@@ -172,7 +170,7 @@ class User_Model{
 		$this->email = $email;
 		$this->password = $password;
 		include_once __DIR__.'/../Functions/FillWithDBConnectioin.php';
-		$this->db = //Fill with connection method
+		$this->db = 0;//Fill with connection method
 	}
 
 }
@@ -279,5 +277,9 @@ function loadController($controllerName) {
 }
 
 run();
+
 ?>
 ```
+
+## Disclaimer  
+If you see any syntax error both in the Python script or any PHP files. Please contact me asap. Enjoy ^^
