@@ -4,7 +4,7 @@ Created by Christian Barral
 
 ## Fixed
 Fixed a syntax error on includes of every Controllers  
-Fixed a missing value for $this->db in every Model constructor.
+Fixed a missing value for $this->db in every Model constructor.  
 include_once of DB authentication function example is now commented at first.
 
 ## NEW!  
