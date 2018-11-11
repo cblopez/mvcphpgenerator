@@ -9,7 +9,6 @@ include_once of DB authentication function example is now commented at first.
 
 ## NEW!  
 index.php generator!  
-gatherData.php now includes all Models files. (experimental)
 
 ## Instructions
 Download the script and execute it via terminal  
