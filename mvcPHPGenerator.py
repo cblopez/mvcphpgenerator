@@ -65,7 +65,7 @@ def generateModel(entityName, attributesList):
     model.write('){\r\n')
     for attribute in attributesList:
         model.write('\t\t$this->' + attribute + ' = $' + attribute + ';\r\n')
-    model.write('\t\tinclude_once __DIR__.\'/../Functions/FillWithDBConnectioin.php\';\r\n')
+    model.write('\t\t//include_once __DIR__.\'/../Functions/FillWithDBConnectioin.php\';\r\n')
     model.write('\t\t$this->db = //Fill with connection method\r\n')
     model.write('\t}\r\n')
     model.write('\r\n')
