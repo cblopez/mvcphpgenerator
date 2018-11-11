@@ -3,7 +3,7 @@ Python script for PHP file generator using MVC Paradigm for Python 2.7.
 Created by Christian Barral
 
 ## Fixed
-Fixed a syntax error on includes of every Controllers
+Fixed a syntax error on includes of every Controllers  
 Fixed a missing value for $this->db in every Model constructor.
 
 ## NEW!  
