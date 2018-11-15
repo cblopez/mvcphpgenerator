@@ -12,7 +12,7 @@ def generateController(entityName,actionList):
 
     controller.write('<?php\r\n')
     controller.write('\r\n')
-    controller.write('include __DIR__.\'../Functions/gatherData.php\r\n')
+    controller.write('include __DIR__.\'/../Functions/gatherData.php\';\r\n')
     controller.write('\r\n')
     controller.write('\r\n')
     controller.write('if(!$_GET){\r\n')
