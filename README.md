@@ -37,7 +37,7 @@ You'll be asked to type on terminal all the info required to create de PHP scrip
 - The index.php file is used as a common entry point. 
   
 ## Arguments  
-Several arguments are now available for you script:  
+Several arguments are now available for your script:  
 ```  
 usage: mvcPHPGenerator.py [-h] [-o OUTPUT_DIRECTORY] [-i INPUT_FILE]
                           [--name OUTPUT_NAME] [--create-index]
