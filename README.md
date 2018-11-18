@@ -3,14 +3,14 @@ Python script for PHP file generator using MVC Paradigm for Python 2.7.
 Created by Christian Barral
 
 ## Fixed
-Fixed several syntax erros on diferent files.
+Fixed several syntax errors on different files.
 
 ## NEW!  
-Command line arguments!
-Create file structure from input file.
-Index Generation is now optional.
-Output directory can now be chosen.
-Output directory name can now be modified.
+Command line arguments!  
+Create file structure and PHP files from an input file.  
+Index Generation is now optional.  
+Output directory can now be chosen.  
+Output directory name can now be modified.  
 
 ## Instructions
 Download the script and execute it via terminal  
@@ -27,14 +27,14 @@ Move to a desired directory via terminal
 Execute the script  
 ```
  python mvcPHPGenerator.py
-```
+```  
 
 You'll be asked to type on terminal all the info required to create de PHP scripts and classes. The script follows this scheme for your project:  
 - Controllers are scripts
 - Models are classes
 - Views are not created (obviously)
-- The script for gathering data is situated under MVCPHPGenerator/Functions  
-- the index.php is used as a common entry point (new)  
+- The script for gathering data is situated under MVCPHPGenerator/Functions (MVCPHPGenerator is the default name, you'll be able to change it, read 'Arguments' section).  
+- The index.php file is used as a common entry point. 
   
 ## Arguments  
 Several arguments are now available for you script:  
@@ -56,12 +56,12 @@ optional arguments:
   --create-index       Enable de index.php creation.
 ``` 
 ## Two input modes  
-As you can see in the possible arguments section, you can either use an input file, or use the manual input. I highly recommend you using an input file, as it's quicker and easy to modify, but be careful, the input file must follow some strict syntax rules:  
-- Entities must start with a '-' sign  
+As you can see in the possible arguments section, you can either use an input file, or use the manual input. I highly recommend you using an input file as it's quicker and easy to modify, but be careful, the input file must follow some strict syntax rules:  
+- Entities MUST start with a '-' sign  
 - Attributes and actions from an entity MUST be under that entity and before the next one, if you don't want to experiment some weird behavour.  
-- Attributes must start with '+' sign  
-- Actions must start with '\*' sign
-- NO black lines are permitted.
+- Attributes MUST start with '+' sign  
+- Actions MUST start with '\*' sign
+- NO blanck lines are permitted.
 - Any type of tab (\t) will be omitted.  
 
 ### Example (input file)  
@@ -87,13 +87,13 @@ So we have the following example: "I want to create a PHP file structure with tw
 	*delete
 	*showall
 ```  
-Now all we have to do, is to execute the script with in -i option. Imagine that the above file is called 'example.txt' and it's on the current directory of the script. We'll also like to name output directory as 'gitExample', and save it in the current execution path. Let's also generate an index.php to make our lifes easier:  
+Now all we have to do, is to execute the script using the -i option. Imagine that the above file is called 'example.txt' and it's on the current directory of the script. We'll also like to name our output directory as 'gitExample', and save it in the current execution path. Let's also generate an index.php to make our lifes easier:  
 ``` 
 python mvcPHPGenerator.py -i example.txt --name gitExample --create-index
 ```  
 
 ### Example (manual input)  
-If you decide not to use a strutured input file, you can execute the script without the -i option and enter all the information manually. Let's now create a manual input and export all tha information to a folder called 'manualInputExample' on the directory '/tmp/myDir'. If a given directory does not exist, the script will ask you if you would like to create it. Example
+If you decide not to use a strutured input file (you should, btw), you can execute the script without the -i option and enter all the information manually. Let's now create a manual input and export all tha information to a folder called 'manualInputExample' on the directory '/tmp/myDir'. If a given directory does not exist, the script will ask you if you would like to create it. Example
 ``` 
 python mvcPHPGenerator.py -o /tmp/myDir --name manualIinputExample --create-index
 ``` 
@@ -235,7 +235,7 @@ class User_Model{
 		$this->surname = $surname;
 		$this->email = $email;
 		$this->password = $password;
-		include_once __DIR__.'/../Functions/FillWithDBConnection.php';
+		//include_once __DIR__.'/../Functions/FillWithDBConnection.php';
 		$this->db = "something";//Fill with connection method
 	}
 
