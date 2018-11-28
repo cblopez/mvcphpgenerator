@@ -1,3 +1,5 @@
+from constants import *
+
 def createGatherData(absolute_output_path):
     '''
     Gather Data initial unfilled script creation
@@ -6,10 +8,10 @@ def createGatherData(absolute_output_path):
 
     gather = open(absolute_output_path + '/Functions/gatherData.php', 'w')
 
-    gather.write('<?php\r\n')
-    gather.write('\r\n')
-    gather.write('//Fill with includes\r\n')
-    gather.write('\r\n')
+    gather.write('<?php' + EOL)
+    gather.write(EOL)
+    gather.write('//Fill with includes' + EOL)
+    gather.write(EOL)
 
     gather.close()
 
@@ -30,40 +32,40 @@ def appendToGatherData(entityName, attributesList, absolute_output_path):
 
     gather = open(absolute_output_path + '/Functions/gatherData.php', 'a+')
 
-    gather.write('function gatherData' + entityName + '(){\r\n')
-    gather.write('\r\n')
+    gather.write('function gatherData' + entityName + '(){' + EOL)
+    gather.write(EOL)
     for attribute in attributesList:
-        gather.write('\t$' + attribute + ' = \'\';\r\n')
-    gather.write('\r\n')
-    gather.write('\tif($_POST){\r\n')
-    gather.write('\r\n')
+        gather.write(ST + '$' + attribute + ' = \'\';' + EOL)
+    gather.write(EOL)
+    gather.write(ST + 'if($_POST){' + EOL)
+    gather.write(EOL)
     for attribute in attributesList:
-        gather.write('\t\tif(isset($_POST[\'' + attribute + '\'])) $' + attribute + ' = $_POST[\'' + attribute + '\'];\r\n')
-    gather.write('\r\n')
+        gather.write(DT + 'if(isset($_POST[\'' + attribute + '\'])) $' + attribute + ' = $_POST[\'' + attribute + '\'];' + EOL)
+    gather.write(EOL)
 
-    gather.write('\t\treturn new ' + originalName + '_Model(')
+    gather.write(DT + 'return new ' + originalName + '_Model(')
     for i in range(0, len(attributesList)):
         gather.write('$' + attributesList[i])
         if i != (len(attributesList) - 1):
             gather.write(',')
-    gather.write(');\r\n')
-    gather.write('\r\n')
-    gather.write('\t} else {\r\n')
-    gather.write('\r\n')
+    gather.write(');' + EOL)
+    gather.write(EOL)
+    gather.write(ST + '} else {' + EOL)
+    gather.write(EOL)
     for attribute in attributesList:
-        gather.write('\t\tif(isset($_GET[\'' + attribute + '\'])) $' + attribute + ' = $_GET[\'' + attribute + '\'];\r\n')
-    gather.write('\r\n')
-    gather.write('\t\treturn new ' + originalName + '_Model(')
+        gather.write(DT + 'if(isset($_GET[\'' + attribute + '\'])) $' + attribute + ' = $_GET[\'' + attribute + '\'];' + EOL)
+    gather.write(EOL)
+    gather.write(DT + 'return new ' + originalName + '_Model(')
     for i in range(0, len(attributesList)):
         gather.write('$' + attributesList[i])
         if i != (len(attributesList) - 1):
             gather.write(',')
-    gather.write(');\r\n')
-    gather.write('\r\n')
-    gather.write('\t}\r\n')
-    gather.write('\r\n')
-    gather.write('}\r\n')
-    gather.write('\r\n')
+    gather.write(');' + EOL)
+    gather.write(EOL)
+    gather.write(ST + '}' + EOL)
+    gather.write(EOL)
+    gather.write('}' + EOL)
+    gather.write(EOL)
 
     gather.close()
 

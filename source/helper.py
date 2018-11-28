@@ -1,5 +1,6 @@
 import os
 from sys import exit
+from constants import *
 
 def process_directory(directory):
     '''

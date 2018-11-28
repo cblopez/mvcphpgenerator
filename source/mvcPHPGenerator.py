@@ -7,6 +7,7 @@ from model import generateModel
 from index import createIndex
 from gatherData import *
 from helper import *
+from constants import *
 
 
 def main():
@@ -111,25 +112,25 @@ def main():
             entityName = raw_input("Entity name: ")
             attributesList = []
             attribute = ''
-            while(attribute != 'exit'):
-                attribute = raw_input('Insert attribute name (exit to stop): ')
-                if(attribute != 'exit'):
+            while(attribute != 'none'):
+                attribute = raw_input('Insert attribute name (none to stop): ')
+                if(attribute != 'none'):
                     attributesList.append(attribute)
-                    actionList = []
-                    action = ''
-                    while(action != 'none'):
-                        action = raw_input('Insert action (none to stop): ')
-                        if(action != 'none'):
-                            actionList.append(action)
+            actionList = []
+            action = ''
+            while(action != 'none'):
+                action = raw_input('Insert action (none to stop): ')
+                if(action != 'none'):
+                    actionList.append(action)
 
-                            print("[+] Creating Controller for %s" % entityName)
-                            generateController(entityName, actionList, absolute_output_path)
-                            print("[+] Creating Model for %s" % entityName)
-                            generateModel(entityName, attributesList, absolute_output_path)
-                            print("[+] Appending to gatherData.php for %s" % entityName)
-                            appendToGatherData(entityName, attributesList, absolute_output_path)
+            print("[+] Creating Controller for %s" % entityName)
+            generateController(entityName, actionList, absolute_output_path)
+            print("[+] Creating Model for %s" % entityName)
+            generateModel(entityName, attributesList, absolute_output_path)
+            print("[+] Appending to gatherData.php for %s" % entityName)
+            appendToGatherData(entityName, attributesList, absolute_output_path)
 
-        option = raw_input("Would you like to add more entities? (yes/no): ")
+            option = raw_input("Would you like to add more entities? (yes/no): ")
 
     closeGatherData(absolute_output_path)
     print("[+] Creating index.php")
