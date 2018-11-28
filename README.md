@@ -57,7 +57,7 @@ As you can see in the possible arguments section, you can either use an input fi
 - Attributes and actions from an entity MUST be under that entity and before the next one, if you don't want to experiment some weird behavour.  
 - Attributes MUST start with '+' sign  
 - Actions MUST start with '\*' sign
-- NO blanck lines are permitted.
+- NO blank lines are permitted.
 - Any type of tab (\t) will be omitted.  
 
 ### Example (input file)  
@@ -110,12 +110,12 @@ by Christian Barral
 [+] Created Views folder
 [+] Creating gatherData.php
 Entity name: USER
-Insert attribute name (exit to stop): login
-Insert attribute name (exit to stop): name
-Insert attribute name (exit to stop): surname
-Insert attribute name (exit to stop): email
-Insert attribute name (exit to stop): password
-Insert attribute name (exit to stop): exit
+Insert attribute name (none to stop): login
+Insert attribute name (none to stop): name
+Insert attribute name (none to stop): surname
+Insert attribute name (none to stop): email
+Insert attribute name (none to stop): password
+Insert attribute name (none to stop): none
 Insert action (none to stop): add
 Insert action (none to stop): edit
 Insert action (none to stop): show
@@ -126,12 +126,12 @@ Insert action (none to stop): none
 [+] Appending to gatherData.php for USER
 Would you like to add more entities? (yes/no): yes
 Entity name: POST
-Insert attribute name (exit to stop): idPost
-Insert attribute name (exit to stop): title
-Insert attribute name (exit to stop): content
-Insert attribute name (exit to stop): author
-Insert attribute name (exit to stop): date
-Insert attribute name (exit to stop): exit
+Insert attribute name (none to stop): idPost
+Insert attribute name (none to stop): title
+Insert attribute name (none to stop): content
+Insert attribute name (none to stop): author
+Insert attribute name (none to stop): date
+Insert attribute name (none to stop): none
 Insert action (none to stop): add
 Insert action (none to stop): delete
 Insert action (none to stop): showall
