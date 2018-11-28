@@ -2,15 +2,11 @@
 Python script for PHP file generator using MVC Paradigm for Python 2.7.  
 Created by Christian Barral
 
-## Fixed
-Fixed several syntax errors on different files.
+## Fixed  
+Fixed indentations that were causing the manual input to not behave as intended.  
 
-## NEW!  
-Command line arguments!  
-Create file structure and PHP files from an input file.  
-Index Generation is now optional.  
-Output directory can now be chosen.  
-Output directory name can now be modified.  
+## NEW!    
+End of line '\r\n', as well as single, double and triple tabulations are now defined as constants in their particular file  
 
 ## Instructions
 Download the script and execute it via terminal  
