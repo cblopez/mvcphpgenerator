@@ -452,4 +452,5 @@ If you see any syntax error both in the Python script or any PHP files. Please c
 ## TODO  
 - Convert functional script to Class based script.  
 - Add functionalities to file parser.  
+- Correctly comment all the functions.  
 
