@@ -1,0 +1,31 @@
+-User
+	+login!
+	+name
+	+surname
+	+email
+	+password
+	*register
+	*login
+	*edit
+	*showProfile
+
+-User_Championship
+	+championshipID!
+	+login!
+	+inscriptionDate
+	*add
+	*search
+	*delete
+
+-Championship
+	+champeionshipID!
+	+name
+	+startDate
+	+endDate
+	+level
+	*add
+	*edit
+	*delete
+	*showall
+	*showcurrent
+	*promote
