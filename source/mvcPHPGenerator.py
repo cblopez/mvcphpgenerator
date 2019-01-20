@@ -122,7 +122,6 @@ def main():
     if arguments.index:
         createIndex(absolute_output_path)
     print("[+] Finished successfully.")
-    print("IMPORTANT: Go to the Functions folder and fill the models includes from gatherData.php manually. ")
 
 
 if __name__ == '__main__':
