@@ -140,6 +140,8 @@ If you have missed a primary key:
 [!] The entity User has no Primary Key, please select at least one attribute as PK writting an exclamation '!' sign at the end of it.
 ```  
 
+### For a complete example, feel free to check the 'example' folder in the repository  
+
 
 ## Controller Example: User_Championship_Controller.php   
 ```
@@ -445,4 +447,9 @@ run();
 ```
 
 ## Disclaimer  
-If you see any syntax error both in the Python script or any PHP files. Please contact me asap. Enjoy ^^
+If you see any syntax error both in the Python script or any PHP files. Please contact me asap. Enjoy ^^  
+
+## TODO  
+- Convert functional script to Class based script.  
+- Add functionalities to file parser.  
+
