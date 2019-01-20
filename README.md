@@ -35,7 +35,7 @@ You'll be asked to select an input file with all the info required to create the
 - The index.php file is used as a common entry point. 
   
 ## Arguments  
-Several arguments are now available for you script:  
+Several arguments are now available for your script:  
 ```  
 usage: mvcPHPGenerator.py [-h] -i INPUT_FILE [-o OUTPUT_DIRECTORY]
                           [--name OUTPUT_NAME] [--create-index]
@@ -61,7 +61,7 @@ As you can see in the possible arguments section, you must use an input file for
 - Attributes MUST start with '+' sign  
 - Actions MUST start with '\*' sign  
 - Primary keys must have a '!' sign at the end of the attribute. At least one attribute from every entity needs one.  
-- Any type of tab (\t) or blank line (\n) will be omitted.  
+- Any type of tab (\t) or blank line (\n) will be omitted. 
 
 ### Example  
 So we have the following example: "I want to create a PHP file structure with three entities involved: Championship, User and User_Championship. My User has the following attributes: login (primary key), name, surname, email, password. The application will be able to register, login, edit and showProfile for every user. The Championship entity has the following attributes: championshipID (primary key), name, startDate, endDate and level. The applications will be able to add, edit, delete, showall, showcurrent and promote any championship. The User_Championship entity is used to save every player that is participating in any championship (From a database perspective, a single User can participate in n Championships and m Users can be in a single Championship, so this entity represents the (n, m) cardinality), so it must have a championshipID attribute (primary key) and a login attribute (primary key), plus an inscriptionDate. Last but not least, the controller for this entity must allow to add, search and delete anything related to the User-Championship relationship". Here's an example of how the input file should look like:  
