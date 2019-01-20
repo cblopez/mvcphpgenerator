@@ -1,6 +1,6 @@
 from constants import *
 
-def createGatherData(absolute_output_path):
+def createGatherData(absolute_output_path, entities):
     '''
     Gather Data initial unfilled script creation
     @Param absolute_output_path: Path where the hole output is going to be written
@@ -10,7 +10,11 @@ def createGatherData(absolute_output_path):
 
     gather.write('<?php' + EOL)
     gather.write(EOL)
-    gather.write('//Fill with includes' + EOL)
+    for entity in entities:
+        properly_named_entity = entity.lower()
+        properly_named_entity = entity.title()
+        properly_named_entity = entity.replace(" ", "_")
+        gather.write('include __DIR__.\'/../Models/' + properly_named_entity + '.php\';' + EOL)
     gather.write(EOL)
 
     gather.close()
@@ -35,17 +39,20 @@ def appendToGatherData(entityName, attributesList, absolute_output_path):
     gather.write('function gatherData' + entityName + '(){' + EOL)
     gather.write(EOL)
     for attribute in attributesList:
-        gather.write(ST + '$' + attribute + ' = \'\';' + EOL)
+        attributeCleaned = attribute.replace('!', '')
+        gather.write(ST + '$' + attributeCleaned + ' = \'\';' + EOL)
     gather.write(EOL)
     gather.write(ST + 'if($_POST){' + EOL)
     gather.write(EOL)
     for attribute in attributesList:
-        gather.write(DT + 'if(isset($_POST[\'' + attribute + '\'])) $' + attribute + ' = $_POST[\'' + attribute + '\'];' + EOL)
+        attributeCleaned = attribute.replace('!', '')
+        gather.write(DT + 'if(!empty($_POST[\'' + attributeCleaned + '\'])) $' + attributeCleaned + ' = $_POST[\'' + attributeCleaned + '\'];' + EOL)
     gather.write(EOL)
 
     gather.write(DT + 'return new ' + originalName + '_Model(')
     for i in range(0, len(attributesList)):
-        gather.write('$' + attributesList[i])
+        attributeCleaned = attributesList[i].replace('?', '')
+        gather.write('$' + attributeCleaned)
         if i != (len(attributesList) - 1):
             gather.write(',')
     gather.write(');' + EOL)
@@ -53,11 +60,13 @@ def appendToGatherData(entityName, attributesList, absolute_output_path):
     gather.write(ST + '} else {' + EOL)
     gather.write(EOL)
     for attribute in attributesList:
-        gather.write(DT + 'if(isset($_GET[\'' + attribute + '\'])) $' + attribute + ' = $_GET[\'' + attribute + '\'];' + EOL)
+        attributeCleaned = attribute.replace('!', '')
+        gather.write(DT + 'if(!empty($_GET[\'' + attributeCleaned + '\'])) $' + attributeCleaned + ' = $_GET[\'' + attributeCleaned + '\'];' + EOL)
     gather.write(EOL)
     gather.write(DT + 'return new ' + originalName + '_Model(')
     for i in range(0, len(attributesList)):
-        gather.write('$' + attributesList[i])
+        attributeCleaned = attributesList[i].replace('?', '')
+        gather.write('$' + attributeCleaned)
         if i != (len(attributesList) - 1):
             gather.write(',')
     gather.write(');' + EOL)

@@ -62,24 +62,40 @@ def process_input_file(input_file):
     file_lines = [x.strip() for x in structured_file.readlines()]
     currentEntity = ""
     currentLine = 1
+    hasPrimaryKey = True
+    previousEntity = None
     for line in file_lines:
         if line.startswith("-"):
-            currentEntity = line[1:]
+            currentEntity = line[1:].strip()
+            if not hasPrimaryKey:
+                print('[!] The entity ' + previousEntity + ' has no Primary Key, please select at least one attribute as PK writting an exclamation \'!\' sign at the end of it.' )
+                exit()
+            hasPrimaryKey = False
             entities_dict[currentEntity] = {}
             entities_dict[currentEntity]['attributes'] = []
             entities_dict[currentEntity]['actions'] = []
+            previousEntity = currentEntity
             print("[+] Found entity: %s" % currentEntity)
         elif line.startswith("+"):
-            currentAttribute = line[1:]
+            currentAttribute = line[1:].strip()
             entities_dict[currentEntity]['attributes'].append(currentAttribute)
-            print("\t[+]Found attribute: %s" % currentAttribute)
+            if '!' in currentAttribute:
+                print("\t[+]Found primary key: %s" % currentAttribute.replace('!', ''))
+                hasPrimaryKey = True
+            print("\t[+]Found attribute: %s" % currentAttribute.replace('!', ''))
         elif line.startswith("*"):
-            currentAction = line[1:]
+            currentAction = line[1:].strip()
             entities_dict[currentEntity]['actions'].append(currentAction)
             print("\t[+]Found action: %s" %currentAction)
+        elif not line.strip(): #Black spaces pass
+            pass
         else:
             print("[!] Syntax error on line: %d. Check if there is a syntax error. Exiting..." % currentLine)
-            exit()
+            exit(-1)
         currentLine+=1
+
+    if not hasPrimaryKey:
+        print('[!] The entity ' + previousEntity + ' has no Primary Key, please select at least one attribute as PK writting an exclamation \'!\' sign at the end of it.' )
+        exit()
 
     return entities_dict
