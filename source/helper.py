@@ -47,8 +47,9 @@ def test_file(file):
     '''
     try:
         input_file = open(file, 'r')
-    except FileNotFoundError as e:
+    except EnvironmentError:
         print("[!] The given file does not exist, please select a valid one. Exiting...")
+        exit()
     input_file.close()
 
 def process_input_file(input_file):
