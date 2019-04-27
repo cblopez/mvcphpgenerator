@@ -144,7 +144,7 @@ If you have missed a primary key:
 
 
 ## Controller Example: User_Championship_Controller.php   
-```
+```php
 <?php
 
 /**
@@ -188,7 +188,7 @@ switch($_GET['action']){
 
 ```
 ## Model example: User_Model.php
-```
+```php
 <?php
 
 class User_Championship_Model{
@@ -306,7 +306,7 @@ class User_Championship_Model{
 ?>
 ```
 ## gatherData Example  
-```
+```php
 <?php
 
 include __DIR__.'/../Models/User_Championship.php';
@@ -408,7 +408,7 @@ function gatherDataUser(){
 ?>
 ```
 ## index.php
-```
+```php
 <?php
 
 define("DEFAULT_CONTROLLER", "Index");
